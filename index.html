@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>My Blog</title>
+    
+    <!-- Bootstrap -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+        /* Your CSS styles here */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-image: url("https://hdwallpaperim.com/wp-content/uploads/2017/08/23/474024-nature-landscape-water-clouds-trees-beach-sunset-portrait_display-748x1392.jpg");
+            background-size: cover;
+            color: #fff;
+        }
+        
+        /* Basic styling */
+        .banner {
+            position: relative;
+        }
+        
+        .banner img { 
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+        }
+        
+        .banner h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        
+        .menu-bar {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+}
+
+.menu-bar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 10px 30px;
+}
+
+.menu-bar li {
+    margin: 0 15px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.menu-bar a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 25px; 
+}
+
+.menu-bar li:hover {
+    background-image: linear-gradient(to bottom, #007BFF, #0056b3);
+    transform: scale(1.07);
+}
+        
+        .content {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+       .blog-post {
+    max-width: 800px;
+    text-align: center;
+    margin-bottom: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+    background-image: none;
+}
+        
+       .blog-post:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-image: url('images/posts.webp'); 
+    background-size: cover;
+    color: #000; 
+    transition: box-shadow 0.3s, background-image 0.3s, color 0.3s;
+}
+        
+        .blog-post img {
+            max-width: 100%;
+            max-height: 600px;
+            object-fit: cover;
+        }
+        
+        .like-comment-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .like-section,
+        .comment-section {
+            margin-top: 10px;
+        }
+        
+        .comment-box {
+            width: 100%;
+            padding: 5px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .btn-like,
+        .btn-comment {
+            margin-top: 10px;
+            padding: 10px 30px;
+            background-image: linear-gradient(to bottom, #007BFF, #0056b3);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .btn-like:hover,
+        .btn-comment:hover {
+            background-image: linear-gradient(to bottom, #007BFF, #0056b3);
+            transform: scale(1.07);
+        }
+        
+        .contact-footer {
+            background-color: rgba(0, 0, 0, 0.1);
+            color: #fff;
+            text-align: left;
+            font-size: 24px;
+            padding: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .contact-footer:hover {
+            background-image: url(images/footer.jpg);
+            background-size: cover;
+        }
+        
+        .contact-footer button.btn-primary {
+            padding: 10px 50px;
+            background-image: linear-gradient(to bottom, #007BFF, #0056b3);
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        
+        .contact-footer button.btn-primary:hover {
+            background-image: linear-gradient(to bottom, #0056b3, #007BFF);
+            transform: scale(1.07);
+        }
+    </style>
+</head>
+<body>
+    <header class="banner">
+        <img src="images/footer.jpg" alt="Banner Image">
+        <h1>Mini Blog</h1>
+    </header>
+
+    <nav class="menu-bar">
+        <ul>
+            <li><a href="#">All</a></li>
+            <li><a href="#">Latest</a></li>
+            <li><a href="#">Popular</a></li>
+            <li><a href="#">News</a></li>
+        </ul>
+    </nav>
+
+   <main class="content">
+        <article class="blog-post">
+            <h1>Mount Fuji</h1>
+            <img src="images/1.jpg" alt="Sample Image">
+            <p> Rising to 12,388 feet (3,776 metres), Mount Fuji is the tallest mountain in Japan and is
+                            known for its graceful conical form. It is the country's sacred symbol, and temples and
+                            shrines are located around and on the volcano.
+                            Commonly called “Fuji-san,” it’s the country’s tallest peak, at 3,776 meters. A pilgrimage
+                            site for centuries, it’s considered one of Japan’s 3 sacred mountains, and summit hikes
+                            remain a popular activity. Its iconic profile is the subject of numerous works of art,
+                            notably Edo Period prints by Hokusai and Hiroshige.</p>
+
+            <!-- Like and Comment sections -->
+            <div class="like-comment-section">
+                <div class="like-section">
+                    <button class="btn btn-primary btn-like">Like</button>
+                </div>
+                <div class="comment-section">
+                    <textarea class="comment-box" placeholder="Leave a comment"></textarea>
+                    <button class="btn btn-primary btn-comment">Comment</button>
+                </div>
+            </div>
+        </article>
+        
+        
+       
+        <article class="blog-post">
+            <h1>Niagara Falls</h1>
+            <img src="images/2.jpg" alt="Sample Image">
+            <p> What makes Niagara Falls so impressive is the amount of water flowing over. Most of the
+                            tallest falls in the world have very little water flowing over them. It's the combination of
+                            height and volume that makes Niagara Falls so breathtaking.
+
+                            Formed by the Niagara River, which drains Lake Erie into Lake Ontario, the combined falls have
+                            the highest flow rate of any waterfall in North America that has a vertical drop of more
+                            than 50 m (160 ft). During peak daytime tourist hours, more than 168,000 m3 (5.9 million
+                            cu ft) of water goes over the crest of the falls every minute.
+            </p>
+
+            <!-- Like and Comment sections -->
+            <div class="like-comment-section">
+                <div class="like-section">
+                    <button class="btn btn-primary btn-like">Like</button>
+                </div>
+                <div class="comment-section">
+                    <textarea class="comment-box" placeholder="Leave a comment"></textarea>
+                    <button class="btn btn-primary btn-comment">Comment</button>
+                </div>
+            </div>
+        </article>
+        
+        
+        
+        <article class="blog-post">
+            <h1>Aurora Borealis</h1>
+            <img src="images/3.jpg" alt="Sample Image">
+            <p>An aurora, also commonly known as the northern lights or southern lights, is a natural light display in Earth's sky, predominantly seen in high-latitude regions. Auroras display dynamic patterns of brilliant lights that appear as curtains, rays, spirals, or dynamic flickers covering the entire sky.
+            Auroras are visible almost every night near the Arctic and Antarctic Circles, which are about 66.5 degrees north and south of the Equator. In the north, the display is called aurora borealis, or northern lights. In the south, it is called aurora australis, or southern lights..</p>
+
+            <!-- Like and Comment sections -->
+            <div class="like-comment-section">
+                <div class="like-section">
+                    <button class="btn btn-primary btn-like">Like</button>
+                </div>
+                <div class="comment-section">
+                    <textarea class="comment-box" placeholder="Leave a comment"></textarea>
+                    <button class="btn btn-primary btn-comment">Comment</button>
+                </div>
+            </div>
+        </article>
+        
+         
+        <article class="blog-post">
+            <h1>Hangzhou</h1>
+            <img src="images/4.jpg" alt="Sample Image">
+            <p>Renowned for its scenic beauty, Hangzhou is one of the most photogenic cities in China. In the 13th century, Marco Polo described Hangzhou as "the city of heaven" and "the finest and most splendid city in the world".
+            Hangzhou's most famous sight, West Lake, is considered one of the most beautiful sights in China. Each season offers picturesque scenes that will leave an ever-lasting impression.</p>
+
+            <!-- Like and Comment sections -->
+            <div class="like-comment-section">
+                <div class="like-section">
+                    <button class="btn btn-primary btn-like">Like</button>
+                </div>
+                <div class="comment-section">
+                    <textarea class="comment-box" placeholder="Leave a comment"></textarea>
+                    <button class="btn btn-primary btn-comment">Comment</button>
+                </div>
+            </div>
+        </article>
+        
+        
+        
+    </main>
+
+    <!-- New footer with contact form -->
+    <footer class="contact-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <br>
+                    <h1>Contact Us</h1>
+                    <br>
+                    <h3>Email:</h3>
+                <p> traveladventures@gmail.com</p>
+                    <br>
+                <p>Phone: (123) 456-7890</p>
+                </div>
+
+                <br>
+
+                <div class="col-md-8">
+                    <h1>Send us a message</h1>
+                    <br>
+                    <form class="contact-form">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Your Name">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Your Email">
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="3" placeholder="Your Message"></textarea>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript and jQuery (if needed) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <!-- Your custom scripts go here -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const likeButtons = document.querySelectorAll(".btn-like");
+            const commentButtons = document.querySelectorAll(".btn-comment");
+
+            likeButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    alert("Liked!");
+                });
+            });
+
+            commentButtons.forEach(function (button) {
+                button.addEventListener("click", function () {
+                    alert("Commented!");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
